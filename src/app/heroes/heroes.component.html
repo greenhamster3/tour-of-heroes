@@ -1,7 +1,17 @@
-<h2>My Heroes</h2>
+<h2>{{ name }}'s Heroes</h2>
+<p>Here are some of {{ name }}'s favourite heroes.</p>
+<div>
+  <label for="hero-name">Name: </label>
+  <input id="hero-name" [(ngModel)]="name" placeholder="Your name" />
+</div>
+
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <li
+    *ngFor="let hero of heroes"
+    (click)="onSelect(hero)"
+    [class.selected]="hero === selectedHero"
+  >
+    <span class="badge">{{ hero.id }}</span> {{ hero.name }}
   </li>
 </ul>
 
